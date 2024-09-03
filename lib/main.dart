@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
-import 'core/providers/providers.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
   runApp(const MyApp());
 }
 
@@ -13,14 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: AllProviders.providers,
-      child: MaterialApp.router(
-        title: 'Fitness App',
-        theme: AppTheme.lightTheme,
-        routerDelegate: AppRoutes.router.routerDelegate,
-        routeInformationParser: AppRoutes.router.routeInformationParser,
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          title: 'Fitness App',
+          debugShowCheckedModeBanner: false,
+          // theme: AppTheme.brightTheme,
+          routerConfig: appRouter,
+        );
+      },
     );
   }
 }

@@ -1,54 +1,52 @@
 import 'package:flutter/material.dart';
 
-const Color kBlack = Color(0xFF000000);
-const Color kFuchsiaPink = Color(0xFFFF00FF);
-const Color kBurntOrange = Color(0xFFFF6F00);
+// Define your new colors
+const Color kLightBlue = Color(0xFF98B9FE); // rgb(152, 185, 254)
+const Color kWhite = Colors.white;
 
 class AppTheme {
-  // Light theme
-  static final ThemeData lightTheme = ThemeData(
-    primaryColor: kBlack,
-    hintColor: kFuchsiaPink,
+  static final ThemeData brightTheme = ThemeData(
+    primaryColor: kLightBlue,
+    hintColor: kLightBlue,
     appBarTheme: const AppBarTheme(
-      backgroundColor: kBlack,
-      foregroundColor: Colors.white,
+      backgroundColor: kWhite,
+      foregroundColor: kLightBlue,
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: kFuchsiaPink,
-      textTheme: ButtonTextTheme.primary,
+      buttonColor: kWhite,
     ),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: kBlack),
-      bodyMedium: TextStyle(color: kBlack),
-      displayLarge: TextStyle(color: kFuchsiaPink, fontWeight: FontWeight.bold),
-    ),
+    // textTheme: const TextTheme(
+    //   bodyLarge: TextStyle(color: kWhite),
+    //   bodyMedium: TextStyle(color: kWhite),
+    //   displayLarge: TextStyle(color: kLightBlue, fontWeight: FontWeight.bold),
+    // ),
     dialogTheme: const DialogTheme(
-      backgroundColor: kBlack,
-      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
-      contentTextStyle: TextStyle(color: Colors.white),
+      backgroundColor: kWhite,
+      titleTextStyle: TextStyle(color: kWhite, fontSize: 20),
+      contentTextStyle: TextStyle(color: kWhite),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: const OutlineInputBorder(
-        borderSide: BorderSide(color: kBlack),
-      ),
-      focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: kFuchsiaPink),
-      ),
-      labelStyle: const TextStyle(color: kBlack),
-      hintStyle: TextStyle(color: kBlack.withOpacity(0.6)),
-    ),
-    scaffoldBackgroundColor: kBurntOrange,
+    // inputDecorationTheme: InputDecorationTheme(
+    //   border: const OutlineInputBorder(
+    //     borderSide: BorderSide(color: kLightBlue),
+    //   ),
+    //   focusedBorder: const OutlineInputBorder(
+    //     borderSide: BorderSide(color: kLightBlue),
+    //   ),
+    //   labelStyle: const TextStyle(color: kLightBlue),
+    //   hintStyle: TextStyle(color: kLightBlue.withOpacity(0.6)),
+    // ),
+    scaffoldBackgroundColor: kWhite,
     colorScheme: const ColorScheme(
-      primary: kBlack,
-      secondary: kFuchsiaPink,
-      surface: kBurntOrange,
-      background: kBlack,
+      primary: kLightBlue,
+      secondary: kLightBlue,
+      surface: kWhite,
+      background: kWhite,
       error: Colors.red,
-      onPrimary: Colors.white,
-      onSecondary: Colors.black,
-      onSurface: Colors.white,
-      onBackground: Colors.white,
-      onError: Colors.white,
+      onPrimary: kWhite,
+      onSecondary: kWhite,
+      onSurface: kLightBlue,
+      onBackground: kLightBlue,
+      onError: kWhite,
       brightness: Brightness.light,
     ),
   );
